@@ -1,5 +1,6 @@
 require('dotenv').config();
 
+const cors = require('cors');
 const express = require('express');
 const router = require('./routes/router');
 const productRouter = require('./routes/productRoutes');
@@ -9,6 +10,11 @@ const port = 5000;
 
 const app = express();
 app.use(express.json());
+app.use(
+  cors({
+    origin: 'http://localhost:3000',
+  })
+);
 
 connectDatabase();
 
