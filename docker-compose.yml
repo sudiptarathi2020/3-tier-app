@@ -14,6 +14,19 @@ services:
     volumes:
       - ./frontend/src:/app/src
 
+  nginx-inv-frontend:
+    container_name: nginx-inv-frontend
+    build:
+      context: frontend
+      dockerfile: Dockerfile.Prod
+    depends_on:
+      - inv-backend
+    ports:
+      - 80:80
+    restart: on-failure
+    environment:
+      - NODE_ENV=production
+
   inv-backend:
     container_name: inv-backend
     build:
