@@ -14,19 +14,6 @@ services:
     volumes:
       - ./frontend/src:/app/src
 
-  nginx-inv-frontend:
-    container_name: nginx-inv-frontend
-    build:
-      context: frontend
-      dockerfile: Dockerfile.Prod
-    depends_on:
-      - inv-backend
-    ports:
-      - 80:80
-    restart: on-failure
-    environment:
-      - NODE_ENV=production
-
   inv-backend:
     container_name: inv-backend
     build:
@@ -39,6 +26,30 @@ services:
       - 5000:5000
     environment:
       - MONGO_URI=mongodb://inv-mongo:27017/product
+
+  inv-frontend-nginx:
+    container_name: nginx-inv-frontend
+    build:
+      context: frontend
+      dockerfile: Dockerfile.Prod
+    depends_on:
+      - inv-backend-prod
+    ports:
+      - 80:80
+    restart: on-failure
+    environment:
+      - NODE_ENV=production
+
+  inv-backend-prod:
+    container_name: inv-backend-prod
+    build:
+      context: backend
+      dockerfile: Dockerfile.Prod
+    restart: on-failure
+    ports:
+      - 5000:5000
+    environment:
+      - MONGO_URI=mongodb+srv://tshr-test:${MONGODB_PASS}@cluster0.wabyy15.mongodb.net/?retryWrites=true&w=majority
 
   inv-mongo:
     container_name: inv-mongo
