@@ -38,7 +38,7 @@ echo "Setting up MongoDB database and collection..."
 mongosh <<EOF
 use product;
 db.createCollection("products");
-db.users.insertMany([
+db.products.insertMany([
   { name: "iPhone 18 pro", price: 200, quantity: 4 },
   { name: "Samsung Pro", price: 150, quantity: 13 },
   { name: "Tesla Pi", price: 180, quantity: 7 },
@@ -50,7 +50,7 @@ EOF
 echo "Displaying the inserted products in the collection:"
 mongosh <<EOF
 use product;
-printjson(db.product.find().toArray());
+printjson(db.products.find().toArray());
 EOF
 
 echo "MongoDB setup completed successfully!"
