@@ -1,7 +1,9 @@
 import axios from 'axios';
 
+import { appConfig } from '../config';
+
 const invAxios = axios.create({
-  baseURL: process.env.REACT_APP_BASE_URL,
+  baseURL: appConfig.BASE_URL,
   headers: {
     'Content-Type': 'application/json',
   },

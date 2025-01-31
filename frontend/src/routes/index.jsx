@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import ProductPage from './pages/ProductPage';
-import ProductForm from './pages/ProductForm';
+import ProductPage from '../pages/ProductPage';
+import ProductForm from '../pages/ProductForm';
 
 const TestPage = () => (
   <div>
