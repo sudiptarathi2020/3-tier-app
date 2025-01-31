@@ -1,19 +1,24 @@
-## Up and Run
+## Basic Instructions
 
-> install docker and docker-compose or docker desktop
+> First fork this repository in your GitHub
 
-> `docker compose up -d inv-mongo`
 
-> connect the mongo container to any mongo client like (Mongodb Compass/Studio 3T) and create a db named `product`. Or create it using cli inside `inv-mongo` container
+## STEP-1: Set up Instruction for AWS 
 
-> `docker compose up inv-backend`
+> Launch Instance & Update package manager
 
-## Run locally
+> clone this repository in your AWS machine
 
-> `docker compose up -d inv-mongo`
 
-> `cd backend`
+## STEP-2: Setup MongoDb with dummy data
 
-> `npm install`
 
-> `npm start`
+## STEP-3: Install NodeJS in your AWS Machine
+
+
+## STEP-4: Setup Back-end
+
+
+## STEP-5: Setup Front-end
+
+## STEP-6: Serve Front-end via nginx
