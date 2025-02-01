@@ -20,6 +20,9 @@ export NVM_DIR="$HOME/.nvm"
 sudo ./db-setup.sh
 
 # Setup Backend
+
+cp frontenv 3-tier-app/frontend/.env
+cp backenv 3-tier-app/backend/.env
 cd 3-tier-app/backend/
 npm ci
 nohup node server.js &
