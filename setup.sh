@@ -13,10 +13,6 @@ cd ../
 sudo chmod 700 db-setup.sh
 sudo ./db-setup.sh
 
-# Verify Node.js and npm
-node -v
-npm -v
-
 # Setup Backend
 cd 3-tier-app/backend/
 npm ci
