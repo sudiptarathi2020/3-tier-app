@@ -7,8 +7,8 @@ set -e
 
 
 # Copy db-setup.sh to home directory
-cp 3-tier-app/db-setup.sh ../
-cd ..
+cp db-setup.sh ../
+cd ../
 # Make db-setup.sh executable and run it
 sudo chmod 700 db-setup.sh
 sudo ./db-setup.sh
@@ -19,11 +19,12 @@ nvm current
 npm -v
 
 # Setup Backend
-cd $HOME/3-tier-app/backend/
+cd 3-tier-app/backend/
 npm ci
 nohup node server.js &
+cd ../
 # Setup Frontend
-cd $HOME/3-tier-app/frontend/
+cd frontend/
 npm ci
 nohup run dev -- --host &
 
