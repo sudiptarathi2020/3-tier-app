@@ -7,8 +7,8 @@ set -e
 
 
 # Copy db-setup.sh to home directory
-cp $HOME/3-tier-app/db-setup.sh $HOME/
-ch $HOME
+cp 3-tier-app/db-setup.sh ../
+cd ..
 # Make db-setup.sh executable and run it
 sudo chmod 700 db-setup.sh
 sudo ./db-setup.sh
