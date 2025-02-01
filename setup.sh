@@ -27,7 +27,7 @@ cd ../
 # Setup Frontend
 cd frontend/
 npm ci
-nohup run dev -- --host &
+nohup npm run dev -- --host &
 
 # Print completion message
 echo "3-tier application successfully deployed!"

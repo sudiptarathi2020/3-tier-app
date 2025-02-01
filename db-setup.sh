@@ -38,6 +38,7 @@ echo "Setting up MongoDB database and collection..."
 mongosh <<EOF
 use product;
 db.createCollection("products");
+db.products.deleteMany({});
 db.products.insertMany([
   { name: "iPhone 18 pro", price: 200, quantity: 4 },
   { name: "Samsung Pro", price: 150, quantity: 13 },
