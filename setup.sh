@@ -15,7 +15,6 @@ sudo ./db-setup.sh
 
 # Verify Node.js and npm
 node -v
-nvm current
 npm -v
 
 # Setup Backend
